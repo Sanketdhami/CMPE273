@@ -4,7 +4,7 @@ dictionary = dict()
 for c in  psutil.net_connections(kind="tcp"):
     laddr = "%s@%s" % (c.laddr)
     raddr = ""
-    if c.raddr:
+    if c.raddr and c.laddr:
         if str(c.pid) not in dictionary.keys():
             list1 = [0]
             list1[0] = 1
